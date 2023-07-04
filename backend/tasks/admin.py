@@ -8,7 +8,6 @@ class TagAdmin(admin.ModelAdmin):
     list_display = (
         'id',
         'name',
-        'importance',
         'slug',
     )
 
@@ -23,6 +22,7 @@ class TaskAdmin(admin.ModelAdmin):
         'image',
         'created_at',
         'is_completed',
+        'importance',
     )
 
 

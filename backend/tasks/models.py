@@ -6,18 +6,14 @@ User = get_user_model()
 
 
 class Tag (models.Model):
+
     name = models.CharField(
         max_length=25,
         verbose_name='Тэг',
         unique=True,
         blank=False
     )
-    importance = models.CharField(
-        max_length=25,
-        verbose_name='Важность',
-        unique=True,
-        blank=False,
-    )
+
     slug = models.CharField(
         max_length=25,
         verbose_name='Слаг',
@@ -26,14 +22,21 @@ class Tag (models.Model):
     )
 
     class Meta:
-        verbose_name = 'Тэг',
-        verbose_name_plural = 'Тэги',
+        verbose_name = 'Тэг'
+        verbose_name_plural = 'Тэги'
 
     def __str__(self):
         return self.name
 
 
 class Task(models.Model):
+
+    IMPORTANCE = (
+        ('CRITICAL', 'Critical'),
+        ('HIGH', 'High'),
+        ('NORMAL', 'Normal'),
+    )
+
     name = models.CharField(
         max_length=100,
         verbose_name='Название задания',
@@ -51,6 +54,7 @@ class Task(models.Model):
     image = models.ImageField(
         verbose_name='Изображение',
         upload_to='tasks/',
+        blank=True,
         )
     created_at = models.DateTimeField(
         verbose_name='Создано в',
@@ -59,6 +63,18 @@ class Task(models.Model):
     is_completed = models.BooleanField(
         verbose_name='Статус выполнения',
     )
+    importance = models.CharField(
+        verbose_name='Важность',
+        max_length=25,
+        choices=IMPORTANCE,
+    )
+
+    class Meta:
+        verbose_name = 'Задание'
+        verbose_name_plural = 'Задания'
+
+    def __str__(self):
+        return self.name
 
 
 class Comment(models.Model):
