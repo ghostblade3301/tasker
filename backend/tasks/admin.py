@@ -23,6 +23,7 @@ class TaskAdmin(admin.ModelAdmin):
         'created_at',
         'is_completed',
         'importance',
+        'executor',
     )
 
 

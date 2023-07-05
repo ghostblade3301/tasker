@@ -68,6 +68,11 @@ class Task(models.Model):
         max_length=25,
         choices=IMPORTANCE,
     )
+    executor = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        verbose_name='Исполнитель',
+    )
 
     class Meta:
         verbose_name = 'Задание'

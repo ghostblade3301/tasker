@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %} TASKS {% endblock title %}
+{% block content %}
+Активных задач: {{ task_list.count }}
+  {% for task in task_list %}
+    <ul>
+      <li>Задача: {{ task.name }}</li>
+      <li>Важность: {{ task.importance }}</li>
+      <li>Описание: {{ task.description }}</li>
+      <li>Автор: {{ task.author.get_full_name }}</li>
+      <li>Задача создана: {{ task.created_at }}</li>
+      <li>{{ task.comments.text }}</li>
+    </ul>
+  {% endfor %}
+{% endblock content %}
