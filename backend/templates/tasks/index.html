@@ -1,16 +1,30 @@
 {% extends 'base.html' %}
 {% block title %} TASKS {% endblock title %}
 {% block content %}
-Активных задач: {{ task_list.count }}
-  {% for task in task_list %}
-    <ul>
-      Задача: {{ task.name }}
-      <li>Важность: {{ task.importance }}</li>
-      <li>Автор: {{ task.author.get_full_name }}</li>
-      <li>Задача создана: {{ task.created_at }}</li>
-        <a href="{% url 'tasks:task_detail' task.id %}">
-          Подробнее
-        </a>
-    </ul>
-  {% endfor %}
-{% endblock content %}
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-4">
+        <h1>Tasker</h1>
+        <h3>Активных задач: {{ task_list.count }}</h2>
+        {% for task in task_list %}
+          <ul>
+            Задача: {{ task.name }}
+            <li>Важность: {{ task.importance }}</li>
+            <li>Автор: {{ task.author.get_full_name }}</li>
+            <li>Задача создана: {{ task.created_at }}</li>
+              <a href="{% url 'tasks:task_detail' task.id %}">
+                Подробнее
+              </a>
+          </ul>
+        {% endfor %}
+      </div>
+      <div class="col-4">
+      </div>
+      <div class="col-4">
+        <h1>Личные задачи</h1>
+      </div>
+    </div>
+  </div>
+  {% endblock content %}
+
+
