@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %} TASK_DETAIL {% endblock title %}
+{% block content %}
+<ul>
+  <li>Задача #{{ task.id }}: {{ task.name }}</li>
+  <li>Важность: {{ task.importance }}</li>
+  <li>Описание: {{ task.description }}</li>
+  <li>Комментарии:
+    {% for comment in comment_list %}
+      <ul>
+        {{ comment.author.get_full_name }}: {{ comment.text }}
+      </ul>
+    {% endfor %}
+  </li>
+  <a>Добавить комментарий</a>
+
+</ul>
+{% endblock content %}

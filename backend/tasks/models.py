@@ -6,14 +6,12 @@ User = get_user_model()
 
 
 class Tag (models.Model):
-
     name = models.CharField(
         max_length=25,
         verbose_name='Тэг',
         unique=True,
         blank=False
     )
-
     slug = models.CharField(
         max_length=25,
         verbose_name='Слаг',
