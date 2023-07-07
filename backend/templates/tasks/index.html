@@ -3,7 +3,7 @@
 {% block content %}
   <div class="container py-5">
     <div class="row">
-      <div class="col-4">
+      <div class="col-6">
         <h1>Tasker</h1>
         <h3>Активных задач: {{ task_list.count }}</h2>
         {% for task in task_list %}
@@ -18,9 +18,9 @@
           </ul>
         {% endfor %}
       </div>
-      <div class="col-4">
+      <div class="col-3">
       </div>
-      <div class="col-4">
+      <div class="col-3">
         <h1>Личные задачи</h1>
       </div>
     </div>
