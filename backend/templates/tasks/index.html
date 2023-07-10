@@ -4,8 +4,7 @@
   <div class="container py-5">
     <div class="row">
       <div class="col-6">
-        <h1>Tasker</h1>
-        <h3>Активных задач: {{ task_list.count }}</h2>
+        <h3>Активные задачи: {{ task_list.count }}</h2>
         {% for task in task_list %}
           <ul>
             Задача: {{ task.name }}
@@ -16,12 +15,13 @@
                 Подробнее
               </a>
           </ul>
+          <hr>
         {% endfor %}
       </div>            <!-- Closing div for the 1st column -->
       <div class="col-3">
       </div>            <!-- Closing div for the 2nd column -->
       <div class="col-3">
-        <h1>Личные задачи</h1>
+        <h3>Личные задачи</h3>
       </div>            <!-- Closing div for the 3rd column -->
     </div>              <!-- Closing div for the row -->
   </div>                <!-- Closing div for the container -->

@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 
 from .models import Comment, Tag, Task
+from users.models import User
 
 
 def index(request):

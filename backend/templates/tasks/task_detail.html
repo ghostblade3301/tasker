@@ -2,22 +2,31 @@
 {% block title %} TASK_DETAIL {% endblock title %}
 {% block content %}
   <div class="container py-5">
-    <h1>Подробнее о задаче</h1>
     <div class="row">
       <div class="col-6">
-        <ul>
-          Задача #{{ task.id }}: {{ task.name }}
-          <li>Важность: {{ task.importance }}</li>
-          <li>Описание: {{ task.description }}</li>
-          <li>Комментарии:
-            {% for comment in comment_list %}
-              <ul>
-                {{ comment.author.get_full_name }}: {{ comment.text }}
-              </ul>
-            {% endfor %}
+        <h1>Подробнее о задаче</h1>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            Задача #{{ task.id }}: {{ task.name }}
           </li>
-          <a>Добавить комментарий</a>
+          <li class="list-group-item">
+            Важность: {{ task.importance }}
+          </li>
+          <li class="list-group-item">
+            Описание: {{ task.description }}
+          </li>
         </ul>
+      </div>
+      <div class="col-6">
+        <h1>Комментарии:</h1>
+        <ul class='list-group list-group-flush'>
+          {% for comment in comment_list %}
+            <li class="list-group-item">
+              <b>{{ comment.author.username }}</b>: {{ comment.text }}
+            </li>
+          {% endfor %}
+        </ul>
+        <a>Добавить комментарий</a>
       </div>
     </div>
   </div>
