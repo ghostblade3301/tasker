@@ -5,5 +5,22 @@
       <img src="{% static 'img/logo.jpg' %}" width="30" height="30" class="d-inline-block align-top" alt="">
       <span style="color:red">asker</span>
     </a>
+    <ul class="nav nav-pills">
+      <li>
+        Пользователь: {{ user.username }}
+      </li>
+      <li class="nav-item"> 
+        <a class="nav-link link-light"
+          href="{% url 'users:login' %}">
+          Войти
+        </a>
+      </li>
+      <li class="nav-item"> 
+        <a class="nav-link link-light"
+          href="{% url 'users:signup' %}">
+          Регистрация
+        </a>
+      </li>
+    </ul>    
   </div>
 </nav>
