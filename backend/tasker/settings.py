@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'users',
     'tasks',
+    'core',
 ]
 
 MIDDLEWARE = [
@@ -128,10 +129,10 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_URL = 'users:login'
-LOGIN_REDIRECT_URL = 'tasks:index'
-LOGOUT_REDIRECT_URL = 'tasks:index'
-SIGNUP_REDIRECT_URL = 'tasks:index'
+# LOGIN_URL = 'users:login'
+# LOGIN_REDIRECT_URL = 'tasks:index'
+# LOGOUT_REDIRECT_URL = 'tasks:index'
+# SIGNUP_REDIRECT_URL = 'tasks:index'
 
 #  подключаем движок filebased.EmailBackend
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
